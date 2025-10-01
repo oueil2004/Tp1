@@ -1,0 +1,24 @@
+package test_fonctionnelle;
+
+import java.awt.Robot;
+
+import personnage.Gaulois;
+import personnage.Romain;
+
+public class TestGaulois {
+
+	public static void main(String[] args) {
+		Gaulois asterix, obelix;
+
+		asterix = new Gaulois("Astérix", 8);
+		obelix = new Gaulois("Obélix", 16);
+		Romain minus = new Romain("Minus", 6);
+		
+
+		asterix.parler("Bonjour" + obelix.getNom() + ".");
+		obelix.parler("Bonjour" + asterix.getNom() + "." + "ça te dirais d'aller chasser des sangliers mec ?");
+		asterix.parler("Bonjour" + obelix.getNom() + "." + "oui tres bonne idée");
+
+		
+	}
+}

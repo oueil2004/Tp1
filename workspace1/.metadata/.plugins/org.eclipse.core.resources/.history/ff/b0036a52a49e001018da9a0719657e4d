@@ -1,0 +1,20 @@
+package personnage;
+
+public class Chaudron {
+
+	private int quatitePotion;
+	private int forcePotion;
+	
+	public void remplirChaudron(int forcePotion,int quantite) {
+		
+		
+	}
+	
+	public boolean resterPotion() {
+		
+	}
+	
+	public int prendreLouche() {
+		
+	}
+}

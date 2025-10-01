@@ -1,0 +1,61 @@
+package personnage;
+
+public class Druide {
+
+	private String nom;
+	private int force;
+	private Chaudron chaudron;
+
+	public Druide(String nom, int force) {
+		super();
+		this.nom = nom;
+		this.force = force;
+	}
+
+	
+
+	public void fabriquerPotion(int quantite, int forcepotion) {
+		this.chaudron.remplirChaudron(forcepotion, quantite);
+
+		this.parler("j'ai concocté " + quantite + "doses de potion magique . elle a une force de " + forcepotion + ".");
+
+	}
+
+	public void booster(Gaulois gaulois) {
+		boolean contientPotion;
+		String nomGaulois;
+		
+		
+
+		contientPotion = this.chaudron.resterPotion();
+		nomGaulois = gaulois.getNom();
+
+		if (contientPotion) {
+			if (nomGaulois == "Obélix") {
+				this.parler("Non " + nomGaulois + "Non ! et tu le sais trés bien!");
+			} else {
+				int forcePotion = this.chaudron.prendreLouche();
+				gaulois.boirePotion(forcePotion);
+				this.parler("Tiens " + nomGaulois + "un peu de potion magique.");
+			}
+		} else {
+			this.parler("Desolé " + nomGaulois + "il n'y a plus une seule goutte de potion.");
+		}
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void parler(String texte) {
+
+		System.out.println(this.prendreparole() + "\"" + texte + "\"");
+
+	}
+
+
+	public String prendreparole() {
+		return "Le Druide " + this.nom;
+	}
+
+}
